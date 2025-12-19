@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>System Alert</title>  
+<style>  
+  body {  
+    margin: 0;  
+    background: black;  
+    color: red;  
+    font-family: Arial, sans-serif;  
+    height: 100vh;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    animation: shake 0.15s infinite;  
+  }  
+  
+  @keyframes shake {  
+    0% { transform: translate(0); }  
+    25% { transform: translate(2px, -2px); }  
+    50% { transform: translate(-2px, 2px); }  
+    75% { transform: translate(2px, 2px); }  
+    100% { transform: translate(-2px, -2px); }  
+  }  
+  
+  .box {  
+    border: 2px solid red;  
+    padding: 25px;  
+    text-align: center;  
+    max-width: 320px;  
+    box-shadow: 0 0 30px red;  
+  }  
+  
+  h2 {  
+    margin-bottom: 15px;  
+    color: #ff0000;  
+    text-shadow: 0 0 10px red;  
+  }  
+  
+  button {  
+    margin: 10px;  
+    padding: 10px 20px;  
+    background: black;  
+    color: red;  
+    border: 1px solid red;  
+    cursor: pointer;  
+    font-size: 16px;  
+  }  
+  
+  button:hover {  
+    background: red;  
+    color: black;  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div class="box">  
+  <h2>⚠ SYSTEM WARNING ⚠</h2>  
+  <p>Do you want to see some <b>REAL MAGIC</b>?</p>  
+  <button onclick="fakeAction()">YES</button>  
+  <button onclick="fakeAction()">NO</button>  
+</div>  
+  
+<script>  
+  function fakeAction() {  
+    alert("Initializing magic...\n\nJust kidding 😈");  
+  }  
+</script>  
+  
+</body>  
+</html>  
