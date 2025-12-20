@@ -3,18 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>System Alert</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
   body {
     margin: 0;
-    background: black;
-    color: red;
-    font-family: Arial, sans-serif;
+    background: #000;
+    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     height: 100vh;
+    overflow: hidden;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.6s;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 340px;
+    background: #111;
+    border-radius: 14px;
+    box-shadow: 0 0 40px red;
+    color: #fff;
+    text-align: center;
     animation: shake 0.15s infinite;
-    overflow: hidden;
+  }
+
+  .header {
+    background: #1c1c1c;
+    padding: 12px;
+    font-weight: bold;
+    color: #ff3b3b;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .content {
+    padding: 18px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .content span {
+    color: #ff3b3b;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    border-top: 1px solid #333;
+  }
+
+  .buttons button {
+    flex: 1;
+    padding: 14px 0;
+    background: none;
+    border: none;
+    color: #0a84ff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .buttons button:not(:last-child) {
+    border-right: 1px solid #333;
+  }
+
+  .buttons button:active {
+    background: #222;
   }
 
   @keyframes shake {
@@ -25,49 +85,34 @@
     100% { transform: translate(-2px, -2px); }
   }
 
-  .box {
-    border: 2px solid red;
-    padding: 25px;
-    text-align: center;
-    max-width: 320px;
-    box-shadow: 0 0 30px red;
-    background: black;
-  }
-
-  h2 {
-    margin-bottom: 15px;
-    color: #ff0000;
-    text-shadow: 0 0 10px red;
-  }
-
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    background: black;
-    color: red;
-    border: 1px solid red;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  button:hover {
-    background: red;
-    color: black;
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 </style>
 </head>
+
 <body>
 
-<div class="box">
-  <h2>⚠ SYSTEM WARNING ⚠</h2>
-  <p>Do you want to see some <b>REAL MAGIC</b>?</p>
-  <button onclick="fakeAction()">YES</button>
-  <button onclick="fakeAction()">NO</button>
+<div class="overlay">
+  <div class="popup">
+    <div class="header">⚠️ SYSTEM ALERT</div>
+
+    <div class="content">
+      Unusual activity detected on this device.<br><br>
+      Do you want to see some <span>REAL MAGIC</span>?
+    </div>
+
+    <div class="buttons">
+      <button onclick="fakeAction()">Yes</button>
+      <button onclick="fakeAction()">No</button>
+    </div>
+  </div>
 </div>
 
 <script>
   function fakeAction() {
-    alert("Initializing magic...\n\nJust kidding 😈");
+    alert("Initializing system magic...\n\nJust kidding 😈");
   }
 </script>
 
